@@ -55,6 +55,7 @@ Source:         %{gosource}
 
 %if %{without bootstrap}
 %build
+export LDFLAGS="-X main.version=v0.0.4"
 %gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
 %endif
 
