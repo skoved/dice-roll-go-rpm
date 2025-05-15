@@ -51,11 +51,13 @@ Source:         %{gosource}
 %if %{without bootstrap}
 %generate_buildrequires
 %go_generate_buildrequires
+BuildRequires: pkgconfig(asciidoctor)
 %endif
 
 %if %{without bootstrap}
 %build
 %gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
+asciidoctor -b manpage man/dice-roll-go.adoc
 %endif
 
 %install
@@ -75,6 +77,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %if %{without bootstrap}
 %files
 %license LICENSE
+%{_mandir}/man1/dice-roll-go.1
 %doc README.md
 %{_bindir}/dice-roll-go
 %endif
