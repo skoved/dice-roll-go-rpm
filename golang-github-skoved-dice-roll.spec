@@ -13,6 +13,7 @@
 # https://github.com/skoved/dice-roll-go
 %global goipath         github.com/skoved/dice-roll-go
 Version:                0.0.4
+%global tag             v0.0.4
 
 # REMOVE BEFORE SUBMITTING THIS FOR REVIEW
 # ---
