@@ -64,7 +64,8 @@ export LDFLAGS="-s -w -X main.version=v0.0.4"
 %if %{without bootstrap}
 install -m 0755 -vd                     %{buildroot}%{_bindir}
 install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
-cp                  dice-roll-go.1*     %{_mandir}/man1/
+install -m 0755 -vd                     %{buildroot}%{_mandir}
+install -m 0644 -vp dice-roll-go.1*     %{buildroot}%{_mandir}/man1/
 %endif
 
 %if %{without bootstrap}
