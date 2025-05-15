@@ -12,8 +12,7 @@
 
 # https://github.com/skoved/dice-roll-go
 %global goipath         github.com/skoved/dice-roll-go
-%global relversion      0.0.4
-Version:                %{relversion}
+Version:                0.0.4
 
 # REMOVE BEFORE SUBMITTING THIS FOR REVIEW
 # ---
@@ -56,7 +55,7 @@ Source:         %{gosource}
 
 %if %{without bootstrap}
 %build
-export LDFLAGS="-X main.version=%{relversion}"
+export LDFLAGS="-X main.version=v0.0.4"
 %gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
 %endif
 
