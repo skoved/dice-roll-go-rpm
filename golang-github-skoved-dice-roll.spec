@@ -56,7 +56,8 @@ BuildRequires: pkgconfig(asciidoctor)
 
 %if %{without bootstrap}
 %build
-%gobuild -ldflags "-s -w -X main.version=v0.0.2" -o %{gobuilddir}/bin/dice-roll-go %{goipath}
+export LDFLAGS="-s -w -X main.version=v0.0.2"
+%gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
 asciidoctor -b manpage man/dice-roll-go.adoc
 %endif
 
