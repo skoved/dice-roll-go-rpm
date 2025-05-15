@@ -12,7 +12,7 @@
 
 # https://github.com/skoved/dice-roll-go
 %global goipath         github.com/skoved/dice-roll-go
-Version:                0.0.2
+Version:                0.0.3
 
 # REMOVE BEFORE SUBMITTING THIS FOR REVIEW
 # ---
@@ -51,14 +51,12 @@ Source:         %{gosource}
 %if %{without bootstrap}
 %generate_buildrequires
 %go_generate_buildrequires
-BuildRequires: pkgconfig(asciidoctor)
 %endif
 
 %if %{without bootstrap}
 %build
-export LDFLAGS="-s -w -X main.version=v0.0.2"
+export LDFLAGS="-s -w -X main.version=v0.0.3"
 %gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
-asciidoctor -b manpage man/dice-roll-go.adoc
 %endif
 
 %install
