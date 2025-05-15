@@ -80,7 +80,6 @@ install -m 0644 -vp dice-roll-go.1*     %{buildroot}%{_mandir}/man1/
 %license LICENSE
 %{_mandir}/man1/dice-roll-go.1*
 %doc README.md
-%doc dice-roll-go.adoc
 %{_bindir}/dice-roll-go
 %endif
 
