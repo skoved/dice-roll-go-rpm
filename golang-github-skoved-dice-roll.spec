@@ -34,7 +34,8 @@ Easy terminal command for rolling different kinds of dice written in Go.}
 %global godocs          README.md
 
 Name:           golang-github-skoved-dice-roll
-Release:        %autorelease
+# copr is doesn't play nice with %autorelease (at least for me)
+Release:        1+%(date --date=now '+%%Y%%m%%d.%%H%%M%%S')%{?dist}
 Summary:        Easy terminal command for rolling different kinds of dice written in Go
 
 License:        MIT
