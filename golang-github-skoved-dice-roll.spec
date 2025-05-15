@@ -12,7 +12,7 @@
 
 # https://github.com/skoved/dice-roll-go
 %global goipath         github.com/skoved/dice-roll-go
-Version:                0.0.1
+Version:                0.0.2
 
 # REMOVE BEFORE SUBMITTING THIS FOR REVIEW
 # ---
@@ -56,7 +56,7 @@ BuildRequires: pkgconfig(asciidoctor)
 
 %if %{without bootstrap}
 %build
-%gobuild -o %{gobuilddir}/bin/dice-roll-go %{goipath}
+%gobuild -ldflags "-s -w -X main.version=v0.0.2" -o %{gobuilddir}/bin/dice-roll-go %{goipath}
 asciidoctor -b manpage man/dice-roll-go.adoc
 %endif
 
